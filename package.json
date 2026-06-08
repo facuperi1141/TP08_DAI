@@ -12,10 +12,12 @@
   },
   "license": "ISC",
   "author": "",
-  "type": "modules",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "start": "index.js",
+     "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "cors": "^2.8.6",

@@ -18,28 +18,35 @@ export const create = async (data) => {
     if (!error) result.data = await ProvinceRepository.insert(data)
     return result
 }
-
 export const update = async (data) => {
-    let result = 
-    {
-        error: null, 
-        notFound: false, 
-        data: null 
+    let result = {
+        error: null,
+        notFound: false,
+        data: null
+    };
+    const error = validate(data);
+    if (error) {
+        result.error = error;
     }
-    const error = validate(data)
-    if (error) result.error = error
-    if (!error) {
-        const existing = await ProvinceRepository.findById(data.id)
-        if (!existing) result.notFound = true
-        if (existing) result.data = await ProvinceRepository.update(data)
+    const existing = await ProvinceRepository.returnIdByName(data.nombre);
+    if (!existing) result.notFound = true;
+    else {
+    const updatedProvince = await ProvinceRepository.update(data, existing.id);
+    result.data = updatedProvince;
     }
-    return result
+    return result;
 }
 
-export const remove = async (id) => {
-    let result = { notFound: false }
-    const existing = await ProvinceRepository.findById(id)
-    if (!existing) result.notFound = true
-    if (existing) await ProvinceRepository.remove(id)
-    return result
+export const remove = async (data) => {
+    let result = {
+        notFound: false
+    };
+
+    const existing = await ProvinceRepository.returnIdByName(data.nombre);
+    console.log(existing)
+
+    if (!existing) result.notFound = true;
+    else await ProvinceRepository.remove(existing.id);
+    
+    return result;
 }

@@ -23,3 +23,4 @@ app.use((err, req, res, next) => {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({error : "Error interno"})
 
 })
+
