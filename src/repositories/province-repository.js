@@ -6,6 +6,17 @@ export const findAll = async () => {
     return rows;
 }
 
+export const findById = async (id) => {
+    const { rows } = await pool.query(
+        `SELECT *
+         FROM provinces
+         WHERE id = $1`,
+        [id]
+    );
+
+    return rows[0];
+}
+
 export const insert = async (data) => {
     const { nombre, capital, latitud, longitud} = data;
     const { rows } = await pool.query(
