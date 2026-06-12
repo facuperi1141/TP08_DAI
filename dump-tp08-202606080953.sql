@@ -77,43 +77,6 @@ ALTER TABLE ONLY public.provinces ALTER COLUMN id SET DEFAULT nextval('public.pr
 -- Data for Name: provinces; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.provinces (nombre, capital, latitud, longitud, id) FROM stdin;
-Buenos Aires	La Plata	-34.9214	-57.9544	1
-Catamarca	San Fernando del Valle de Catamarca	-28.4696	-65.7852	2
-Chaco	Resistencia	-27.4514	-58.9867	3
-Chubut	Rawson	-43.3002	-65.1023	4
-C√≥rdoba	C√≥rdoba	-31.4201	-64.1888	5
-Corrientes	Corrientes	-27.4692	-58.8306	6
-Entre R√≠os	Paran√°	-31.7319	-60.5238	7
-Formosa	Formosa	-26.1775	-58.1781	8
-Jujuy	San Salvador de Jujuy	-24.1858	-65.2995	9
-La Pampa	Santa Rosa	-36.6203	-64.2906	10
-La Rioja	La Rioja	-29.4131	-66.8558	11
-Mendoza	Mendoza	-32.8895	-68.8458	12
-Misiones	Posadas	-27.3671	-55.8961	13
-Neuqu√©n	Neuqu√©n	-38.9516	-68.0591	14
-R√≠o Negro	Viedma	-40.8135	-62.9967	15
-Salta	Salta	-24.7829	-65.4232	16
-San Juan	San Juan	-31.5375	-68.5364	17
-San Luis	San Luis	-33.2950	-66.3356	18
-Santa Cruz	R√≠o Gallegos	-51.6230	-69.2168	19
-Santa Fe	Santa Fe	-31.6333	-60.7000	20
-Santiago del Estero	Santiago del Estero	-27.7951	-64.2615	21
-Tierra del Fuego	Ushuaia	-54.8019	-68.3030	22
-Tucum√°n	San Miguel de Tucum√°n	-26.8083	-65.2176	23
-Buens Aires	La Plata	-34.9214	-57.9544	24
-Buens Aires	La Plata	-34.9214	-57.9544	25
-Buens Aires	La Plata	-34.9214	-57.9544	26
-Buens Aires	La Plata	-34.9214	-57.9544	27
-Buens Aires	La Plata	-34.9214	-57.9544	28
-Buens Aires	La Plata	-34.9214	-57.9544	29
-Buens Aires	La Plata	-34.9214	-57.9544	30
-Buens Aires	La Plata	-34.9214	-57.9544	31
-Buens Aires	La Plata	-34.9214	-57.9544	32
-Buens Aires	La Plata	-34.9214	-57.9544	33
-Buens Aires	delfi	-34.9214	-57.9544	34
-\.
-
 
 --
 -- TOC entry 4788 (class 0 OID 0)
@@ -133,9 +96,46 @@ ALTER TABLE ONLY public.provinces
     ADD CONSTRAINT provinces_pkey PRIMARY KEY (id);
 
 
+
+
+
 -- Completed on 2026-06-08 09:53:40
 
 --
 -- PostgreSQL database dump complete
 --
-
+INSERT INTO public.provinces (nombre, capital, latitud, longitud) VALUES
+('Buenos Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Catamarca', 'San Fernando del Valle de Catamarca', '-28.4696', '-65.7852'),
+('Chaco', 'Resistencia', '-27.4514', '-58.9867'),
+('Chubut', 'Rawson', '-43.3002', '-65.1023'),
+('CÛrdoba', 'CÛrdoba', '-31.4201', '-64.1888'),
+('Corrientes', 'Corrientes', '-27.4692', '-58.8306'),
+('Entre RÌos', 'Paran·', '-31.7319', '-60.5238'),
+('Formosa', 'Formosa', '-26.1775', '-58.1781'),
+('Jujuy', 'San Salvador de Jujuy', '-24.1858', '-65.2995'),
+('La Pampa', 'Santa Rosa', '-36.6203', '-64.2906'),
+('La Rioja', 'La Rioja', '-29.4131', '-66.8558'),
+('Mendoza', 'Mendoza', '-32.8895', '-68.8458'),
+('Misiones', 'Posadas', '-27.3671', '-55.8961'),
+('NeuquÈn', 'NeuquÈn', '-38.9516', '-68.0591'),
+('RÌo Negro', 'Viedma', '-40.8135', '-62.9967'),
+('Salta', 'Salta', '-24.7829', '-65.4232'),
+('San Juan', 'San Juan', '-31.5375', '-68.5364'),
+('San Luis', 'San Luis', '-33.2950', '-66.3356'),
+('Santa Cruz', 'RÌo Gallegos', '-51.6230', '-69.2168'),
+('Santa Fe', 'Santa Fe', '-31.6333', '-60.7000'),
+('Santiago del Estero', 'Santiago del Estero', '-27.7951', '-64.2615'),
+('Tierra del Fuego', 'Ushuaia', '-54.8019', '-68.3030'),
+('Tucum·n', 'San Miguel de Tucum·n', '-26.8083', '-65.2176'),
+('Buens Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Buens Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Buens Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Buens Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Buens Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Buens Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Buens Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Buens Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Buens Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Buens Aires', 'La Plata', '-34.9214', '-57.9544'),
+('Buens Aires', 'delfi', '-34.9214', '-57.9544');
