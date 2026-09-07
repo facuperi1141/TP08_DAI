@@ -2,8 +2,21 @@ import express  from "express";
 import cors     from "cors"; 
 import ProvinceRouter from "./src/controllers/province-controller.js" 
 import { StatusCodes } from "http-status-codes";
+const express = require('express');
+const swaggerUi
+=
 
-const app  = express(); 
+require('swagger-ui-express');
+
+const swaggerFile = require('./swagger_output.json');
+const app = express();
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.listen(3000, () => {
+console.log('Servidor corriendo en http://localhost:3000');
+}); 
+
+
 const port = 3000;       // El puerto 3000 (http://localhost:3000)  
 
 // Agrego los Middlewares 
